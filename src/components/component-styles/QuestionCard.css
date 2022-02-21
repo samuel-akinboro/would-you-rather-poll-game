@@ -1,0 +1,62 @@
+.question__card {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 3px rgb(177, 176, 176);
+  margin-bottom: 1.5em;
+  background: #fff;
+  max-width: 476px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.question__card > h3 {
+  height: 40px;
+  background: rgb(25, 121, 177);
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin: 0;
+  border-top: 2px solid #000;
+}
+
+.question__card > .flex {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.question__card > .flex > .avatar {
+  height: 70px;
+  width: 70px;
+}
+
+.question__card > .flex > .content {
+  border-left: 1px solid rgb(197, 193, 193);
+  padding: 0 0 0 1em;
+  margin-left: 1em;
+  width: 100%;
+  text-align: center;
+}
+
+.question__card > .flex > .content > h3 {
+  font-size: 17px;
+}
+
+.question__card > .flex > .content > p {
+  text-align: center;
+  width: 100%;
+}
+
+.question__card > .flex > .content > button {
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(13, 94, 145);
+  color: #fff;
+}

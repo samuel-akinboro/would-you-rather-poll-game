@@ -1,0 +1,27 @@
+.poll__result{
+  width: 80%;
+  margin: 2em auto;
+  max-width: 576px;
+  padding-bottom: 2em;
+}
+
+.poll__result > .option{
+  width: 80%;
+  margin: 1em auto;
+  background-color: white;
+  padding: 1em;
+  box-shadow: 0px 0px 8px lightgray;
+}
+
+.poll__result > .option > h5{
+  margin-top: 0;
+}
+
+.poll__result > button{
+  width: 80%;
+  margin: 2em auto 4em;
+  display: block;
+  padding: 0.7em;
+  font-weight: 600;
+  cursor: pointer;
+}

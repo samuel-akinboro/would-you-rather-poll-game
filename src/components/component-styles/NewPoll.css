@@ -1,0 +1,53 @@
+.new__poll{
+  width: 90%;
+  background: #fff;
+  padding: 1.8em;
+  margin: 2em auto;
+  max-width: 476px;
+}
+
+.new__poll > .container > h1{
+  text-align: center;
+  color: rgb(10, 182, 182);
+  text-transform: uppercase;
+}
+
+.new__poll > .container > h2{
+  font-size: 18px;
+  margin: 1.5em 0 1em;
+  text-transform: capitalize;
+}
+
+.new__poll > .container > p{
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  margin-top: 0.7em;
+  font-weight: 800;
+  color: rgb(10, 182, 182);
+  text-transform: uppercase;
+}
+
+.new__poll > .container > p::first-letter{
+  font-size: 40px;
+}
+
+.new__poll > .container > input{
+  display: block;
+  width: 100%;
+  border: 1px solid rgb(10, 182, 182);
+  padding: 1em;
+  margin: 0.7em 0;
+  outline: none;
+}
+
+.new__poll > .container > button{
+  display: block;
+  width: 100%;
+  background:rgb(10, 182, 182);
+  border: none;
+  padding: 1em;
+  margin: 2em 0 0;
+  color: white;
+  cursor: pointer;
+}

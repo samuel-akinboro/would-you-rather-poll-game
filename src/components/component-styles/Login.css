@@ -1,0 +1,98 @@
+.login__container {
+	font-family: "Helvetica Neue", sans-serif;
+	background:url(https://i.imgur.com/W8IdvVk.jpg);
+	background-size: cover;
+  display: grid;
+  place-content: center;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  position: fixed;
+}
+
+.login-wrap{
+	width: 290px;
+	height: 320px;
+}
+
+.login{
+	padding:40px 40px 30px;
+	position: relative;
+	background-color:#f8f8f8;
+	background-image:-webkit-linear-gradient(top, #f0f0f0, #ddd);
+  background-image:-moz-linear-gradient(top, #f0f0f0, #ddd);
+  background-image:linear-gradient(top, #f0f0f0, #ddd);
+	border-radius:5px;
+	border:#fff 1px solid;
+	box-shadow: rgba(0,0,0,0.5) 0px 3px 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.profile__avatar{
+	display:block;
+	margin:0 auto 15px;
+	width:100px;
+	height:100px;
+	border-radius:100%;
+	border:#fff 3px solid;
+	box-shadow:rgba(0,0,0,0.4) 0px 2px 4px, inset rgba(0,0,0,0.4) 0px 3px 2px;
+	overflow:hidden;
+	background-image:-webkit-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bF8wUsfDaLwvhCLgAk15l_FUNjBA36PPzw&usqp=CAU");
+  background-image:-moz-linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bF8wUsfDaLwvhCLgAk15l_FUNjBA36PPzw&usqp=CAU");
+  background-image:linear-gradient(top left, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 50%), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1bF8wUsfDaLwvhCLgAk15l_FUNjBA36PPzw&usqp=CAU");
+	background-size: auto, 100%;
+}
+
+.user{
+	padding:10px 0;
+	font-size: 0.95em;
+  text-shadow:rgba(255,255,255,0.7) 0px 1px 0px;
+}
+
+.login__container > .login-wrap > .login > .users__container{
+  position: absolute;
+  z-index: 5;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+  inset: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+.login__container > .login-wrap > .login > button{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.login__container > .login-wrap > .login > button:last-child{
+  margin-top: 1em;
+  background-color: #204B7F;
+  color: #fff;
+  border: none;
+}
+
+.login__container > .login-wrap > .login > .users__container > .users > .single__user{
+  display: flex;
+  align-items: center;;
+  gap: 10px;
+	width: 100%;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.login__container > .login-wrap > .login > .users__container > .users > .single__user:hover{
+  background-color: rgb(226, 231, 226);
+}
+
+.login__container > .login-wrap > .login > .users__container > .users > .single__user > h6{
+	margin: 0;
+	font-size: 1em;
+}
