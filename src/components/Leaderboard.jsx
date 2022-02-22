@@ -8,10 +8,10 @@ const Leaderboard = ({ leaderboardData }) => {
 
   return (
     <Fragment>
-      {leaderboardData.map((user, idx) => (
+      {leaderboardData.map((user, i) => (
         <LeaderboardCard key={user.id} 
         src={user.avatarURL} 
-        awardColor={awardColor[idx]}
+        awardColor={awardColor[i]}
         name={user.name}
         answer={user.answerCount}
         question={user.questionCount}

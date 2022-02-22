@@ -1,17 +1,17 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { handleInitialData } from '../actions/shared';
+import { fetchData } from '../actions/general';
 import { connect } from 'react-redux';
 import Login from './Login';
 import Nav from './Nav';
 import Home from './Home';
-import UserCard from './UserCard';
+import ManageCards from './ManageCards';
 import NewPoll from './NewPoll';
 import Leaderboard from './Leaderboard';
 import NoMatch from './NoMatch';
 
-const App = ({handleInitialData, authUser}) => {
-  useEffect(()=>{handleInitialData()}, [handleInitialData])
+const App = ({fetchData, authUser}) => {
+  useEffect(()=>{fetchData()}, [fetchData])
   return (
     <Router>
       <div className="App">
@@ -28,7 +28,7 @@ const App = ({handleInitialData, authUser}) => {
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/questions/bad_id" component={NoMatch} />
-                <Route path="/questions/:question_id" component={UserCard} />
+                <Route path="/questions/:question_id" component={ManageCards} />
                 <Route path="/add" component={NewPoll} />
                 <Route path="/leaderboard" component={Leaderboard} />
                 <Route component={NoMatch} />
@@ -49,5 +49,5 @@ function mapStateToProps({ authUser }) {
 
 export default connect(
   mapStateToProps,
-  { handleInitialData }
+  { fetchData }
 )(App);

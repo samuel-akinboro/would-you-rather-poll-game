@@ -1,12 +1,12 @@
 import {
-  RECEIVE_USERS,
+  FETCH_USERS,
   ADD_ANSWER_TO_USER,
   ADD_QUESTION_TO_USER
 } from '../actions/users';
 
 export default function users(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_USERS:
+    case FETCH_USERS:
       return {
         ...state,
         ...action.users
@@ -31,7 +31,7 @@ export default function users(state = {}, action) {
         ...state,
         [author]: {
           ...state[author],
-          questions: state[author].questions.concat(id)
+          questions: [state[author].questions].concat(id)
         }
       };
     default:

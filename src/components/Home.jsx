@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import UserCard from './UserCard';
+import ManageCards from './ManageCards';
 import { styled } from '@mui/system';
 import TabsUnstyled from '@mui/base/TabsUnstyled';
 import TabsListUnstyled from '@mui/base/TabsListUnstyled';
@@ -86,7 +86,7 @@ function UnstyledTabsCustomized({ userQuestionData }) {
       </TabsList>
       <TabPanel value={0}>
         {userQuestionData.answered.map(question => (
-            <UserCard
+            <ManageCards
               key={question.id}
               question_id={question.id}
               unanswered={true}
@@ -95,7 +95,7 @@ function UnstyledTabsCustomized({ userQuestionData }) {
         </TabPanel>
       <TabPanel value={1}>
         {userQuestionData.unanswered.map(question => (
-            <UserCard
+            <ManageCards
               key={question.id}
               question_id={question.id}
               unanswered={false}
@@ -118,7 +118,7 @@ const panes = props => {
       render: () => (
         <Tab.Pane>
           {userQuestionData.answered.map(question => (
-            <UserCard
+            <ManageCards
               key={question.id}
               question_id={question.id}
               unanswered={true}
@@ -132,7 +132,7 @@ const panes = props => {
       render: () => (
         <Tab.Pane>
           {userQuestionData.unanswered.map(question => (
-            <UserCard
+            <ManageCards
               key={question.id}
               question_id={question.id}
               unanswered={false}

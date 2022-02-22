@@ -3,6 +3,7 @@ import "./component-styles/Login.css";
 import { connect } from "react-redux";
 import { setAuthUser } from "../actions/authUser";
 import Avatar from "@mui/material/Avatar";
+import avatarPic from "../assets/images/login.jpg"
 
 
 const Users = ({ users, setValue, setShowUsers }) => {
@@ -35,7 +36,7 @@ const Users = ({ users, setValue, setShowUsers }) => {
     };
   }
 
-  const generateDropdownData = () => {
+  const fetchUsers = () => {
     return users
       .map((user) => ({
         key: user.id,
@@ -61,7 +62,7 @@ const Users = ({ users, setValue, setShowUsers }) => {
 
   return (
     <div className="users__container">
-      <div className="users">{generateDropdownData()}</div>
+      <div className="users">{fetchUsers()}</div>
     </div>
   );
 };
@@ -75,7 +76,6 @@ const Login = ({ users, setAuthUser }) => {
     new Promise((res, rej) => {
       setTimeout(() => res(), 500);
     }).then(() => setAuthUser(authUser));
-    console.log(authUser)
   };
 
   return (
@@ -83,7 +83,7 @@ const Login = ({ users, setAuthUser }) => {
       <div className="login__container">
         <div className="login-wrap">
           <div className="login">
-            <div className="profile__avatar"></div>
+            <div style={{backgroundImage: avatarPic}} className="profile__avatar"></div>
             <span className="user">Sign In</span>
             {showUsers && (
               <Users

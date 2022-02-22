@@ -1,13 +1,15 @@
 import { saveQuestion } from '../utils/api';
 import { addQuestionToUser } from '../actions/users';
 
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+// initialized action types
+export const FETCH_QUESTIONS = 'FETCH_QUESTIONS';
 export const ADD_ANSWER_TO_QUESTION = 'ADD_ANSWER_TO_QUESTION';
-export const ADD_QUESTION = 'ADD_QUESTION';
+export const CREATE_QUESTION = 'CREATE_QUESTION';
 
-export function receiveQuestions(questions) {
+// actions
+export function fetchQuestions(questions) {
   return {
-    type: RECEIVE_QUESTIONS,
+    type: FETCH_QUESTIONS,
     questions
   };
 }
@@ -21,9 +23,9 @@ export function addAnswerToQuestion(authUser, qid, answer) {
   };
 }
 
-function addQuestion(question) {
+function createQuestion(question) {
   return {
-    type: ADD_QUESTION,
+    type: CREATE_QUESTION,
     question
   };
 }
@@ -32,7 +34,7 @@ export function handleSaveQuestion(optionOneText, optionTwoText, author) {
   return dispatch => {
     return saveQuestion({ optionOneText, optionTwoText, author }).then(
       question => {
-        dispatch(addQuestion(question));
+        dispatch(createQuestion(question));
         dispatch(addQuestionToUser(question));
       }
     );

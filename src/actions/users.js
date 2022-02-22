@@ -1,13 +1,15 @@
 import { saveQuestionAnswer } from '../utils/api';
 import { addAnswerToQuestion } from '../actions/questions';
 
-export const RECEIVE_USERS = 'RECEIVE_USERS';
+// initialized action types
+export const FETCH_USERS = 'FETCH_USERS';
 export const ADD_ANSWER_TO_USER = 'ADD_ANSWER_TO_USER';
 export const ADD_QUESTION_TO_USER = 'ADD_QUESTION_TO_USER';
 
-export function receiveUsers(users) {
+// actions
+export function fetchUsers(users) {
   return {
-    type: RECEIVE_USERS,
+    type: FETCH_USERS,
     users
   };
 }
@@ -27,7 +29,7 @@ export function handleSaveQuestionAnswer(authUser, qid, answer) {
     dispatch(addAnswerToQuestion(authUser, qid, answer));
 
     return saveQuestionAnswer(authUser, qid, answer).catch(e => {
-      console.warn('Error in handleSaveQuestionAnswer:', e);
+      console.warn('Error in saveQuestionAnswer:', e);
     });
   };
 }
