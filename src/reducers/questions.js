@@ -11,6 +11,13 @@ export default function questions(state = {}, action) {
         ...state,
         ...action.questions
       };
+    case CREATE_QUESTION:
+      const { question } = action;
+
+      return {
+        ...state,
+        [question.id]: question
+      };
     case ADD_ANSWER_TO_QUESTION:
       const { authUser, qid, answer } = action;
 
@@ -23,13 +30,6 @@ export default function questions(state = {}, action) {
             votes: [...state[qid][answer].votes, authUser]
           }
         }
-      };
-    case CREATE_QUESTION:
-      const { question } = action;
-
-      return {
-        ...state,
-        [question.id]: question
       };
     default:
       return state;

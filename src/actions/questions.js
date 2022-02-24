@@ -7,30 +7,15 @@ export const ADD_ANSWER_TO_QUESTION = 'ADD_ANSWER_TO_QUESTION';
 export const CREATE_QUESTION = 'CREATE_QUESTION';
 
 // actions
-export function fetchQuestions(questions) {
-  return {
-    type: FETCH_QUESTIONS,
-    questions
-  };
-}
 
-export function addAnswerToQuestion(authUser, qid, answer) {
-  return {
-    type: ADD_ANSWER_TO_QUESTION,
-    authUser,
-    qid,
-    answer
-  };
-}
-
-function createQuestion(question) {
+const createQuestion = (question) => {
   return {
     type: CREATE_QUESTION,
     question
   };
 }
 
-export function handleSaveQuestion(optionOneText, optionTwoText, author) {
+export const handleSaveQuestion = (optionOneText, optionTwoText, author) => {
   return dispatch => {
     return saveQuestion({ optionOneText, optionTwoText, author }).then(
       question => {
@@ -38,5 +23,21 @@ export function handleSaveQuestion(optionOneText, optionTwoText, author) {
         dispatch(addQuestionToUser(question));
       }
     );
+  };
+}
+
+export const fetchQuestions = (questions) => {
+  return {
+    type: FETCH_QUESTIONS,
+    questions
+  };
+}
+
+export const addAnswerToQuestion = (authUser, qid, answer) => {
+  return {
+    type: ADD_ANSWER_TO_QUESTION,
+    authUser,
+    qid,
+    answer
   };
 }

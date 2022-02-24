@@ -11,6 +11,16 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users
       };
+    case ADD_QUESTION_TO_USER:
+      const { id, author } = action;
+
+      return {
+        ...state,
+        [author]: {
+          ...state[author],
+          questions: [state[author].questions, ...id]
+        }
+      };
     case ADD_ANSWER_TO_USER:
       const { authUser, qid, answer } = action;
 
@@ -22,16 +32,6 @@ export default function users(state = {}, action) {
             ...state[authUser].answers,
             [qid]: answer
           }
-        }
-      };
-    case ADD_QUESTION_TO_USER:
-      const { id, author } = action;
-
-      return {
-        ...state,
-        [author]: {
-          ...state[author],
-          questions: [state[author].questions].concat(id)
         }
       };
     default:

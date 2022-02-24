@@ -83,7 +83,7 @@ const Login = ({ users, setAuthUser }) => {
       <div className="login__container">
         <div className="login-wrap">
           <div className="login">
-            <div style={{backgroundImage: avatarPic}} className="profile__avatar"></div>
+            <div style={{backgroundImage: `url(${avatarPic})`}} className="profile__avatar"></div>
             <span className="user">Sign In</span>
             {showUsers && (
               <Users

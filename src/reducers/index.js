@@ -5,6 +5,6 @@ import users from '../reducers/users';
 
 export default combineReducers({
   authUser,
-  questions,
-  users
+  users,
+  questions
 });

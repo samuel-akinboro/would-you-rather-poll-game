@@ -2,18 +2,19 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import LeaderboardCard from './LeaderboardCard';
 
-const awardColor = ['yellow', 'grey', 'orange'];
+const awardColor = ['gold', 'silver', 'brown'];
 
-const Leaderboard = ({ leaderboardData }) => {
+const Leaderboard = ({ rankedData }) => {
 
   return (
     <Fragment>
-      {leaderboardData.map((user, i) => (
-        <LeaderboardCard key={user.id} 
-        src={user.avatarURL} 
-        awardColor={awardColor[i]}
+      {rankedData.map((user, index) => (
+        <LeaderboardCard 
+        key={user.id} 
         name={user.name}
         answer={user.answerCount}
+        src={user.avatarURL} 
+        awardColor={awardColor[index]}
         question={user.questionCount}
         score={user.questionCount + user.answerCount}
       />
@@ -23,7 +24,7 @@ const Leaderboard = ({ leaderboardData }) => {
 }
 
 function mapStateToProps({ users }) {
-  const leaderboardData = Object.values(users)
+  const rankedData = Object.values(users)
     .map(user => ({
       id: user.id,
       name: user.name,
@@ -36,7 +37,7 @@ function mapStateToProps({ users }) {
     .reverse()
     .slice(0, 3);
   return {
-    leaderboardData
+    rankedData
   };
 }
 
